@@ -1,0 +1,9 @@
+# root
+node_modules/
+.env
+
+# frontend
+client/node_modules/
+
+# backend
+server/node_modules/
