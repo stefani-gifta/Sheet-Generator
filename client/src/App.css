@@ -88,10 +88,8 @@
   src: url('../assets/poppins/Poppins-ThinItalic.ttf');
 }
 
-
 :root {
   font-family: Poppins Regular;
-  font-weight: 400;
 
   color-scheme: light dark;
   background-color: #505050;
@@ -115,9 +113,6 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  text-align: center;
 }
 
 a {
@@ -132,46 +127,128 @@ a:hover {
 }
 
 h1 {
+  font-family: Poppins Bold;
   font-size: 3.2em;
   margin: 0;
 }
 
 button {
   border-radius: 50px;
-  border: 1px solid transparent;
+  border: none;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #FA6366;
   cursor: pointer;
   transition: 0.25s;
-  color: white;
 }
 
-button:hover {
-  background-color: #BB5C5E;
-}
-
-button:hover>.arrow {
+button:hover>.right-arrow {
   margin: 0 0 0 1em;
 }
 
-.arrow {
+button:hover>.left-arrow {
+  margin: 0 1em 0 0;
+}
+
+.right-arrow {
   margin: 0 0 0 0.5em;
   transition: 0.25s;
 }
 
-#home {
+.left-arrow {
+  margin: 0 0.5em 0 0;
+  transition: 0.25s;
+}
+
+.start-button {
+  background-color: #FA6366;
+  color: white;
+}
+
+.start-button:hover {
+  background-color: #BB5C5E;
+}
+
+.form-back-button,
+.form-back-button>.left-arrow {
+  color: #505050;
+  font: 1.3em 'Poppins Bold';
+  background-color: white;
+}
+
+.form-back-button {
+  padding: 0;
+}
+
+section {
   display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+#home {
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   text-align: center;
+  width: 100vw;
 }
 
 .page-description {
   margin: 1em;
   font-size: 1.25em;
   max-width: 100vh;
+}
+
+#form {
+  flex-wrap: wrap;
+  align-items: flex-start;
+  align-content: space-around;
+  width: 85vw;
+  overflow: hidden;
+  margin: 1em;
+}
+
+.steps {
+  font: 0.8em Poppins Medium;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  counter-reset: step;
+  margin: 2em 0;
+  border-top: 2px solid #FCB0B2;
+}
+
+.steps>div {
+  margin-top: -2px;
+  padding: 1em 0;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: 0.25s;
+  border-top: 2px solid #FCB0B2;
+}
+
+.steps>div:hover,
+.steps>div:active {
+  margin-top: -3px;
+  border-top: 3px solid #FA6366;
+}
+
+.steps>div::before {
+  content: counter(step);
+  counter-increment: step;
+  background-color: #FA6366;
+  border-radius: 100%;
+  width: 1.3em;
+  height: 1.3em;
+  text-align: center;
+  color: white;
+}
+
+.form-buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }
