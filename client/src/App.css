@@ -279,7 +279,7 @@ label {
   margin-bottom: 0.8em;
 }
 
-input {
+input[type="text"] {
   padding: 0.8em;
 }
 
@@ -287,7 +287,7 @@ input {
   padding: 0.6em;
 }
 
-input,
+input[type="text"],
 .select {
   font: 1em 'Poppins Regular';
   box-sizing: border-box;
@@ -298,11 +298,11 @@ input,
   color: inherit;
 }
 
-input::placeholder {
+input[type="text"]::placeholder {
   color: gainsboro;
 }
 
-input:focus {
+input[type="text"]:focus {
   border: 1px solid #FCB0B2;
 }
 
@@ -316,4 +316,13 @@ input:focus {
   display: flex;
   flex-direction: column;
   margin-top: 0.5em;
+}
+
+.template-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.template-card {
+  height: 200px;
 }
