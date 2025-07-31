@@ -113,6 +113,7 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
+  overflow: hidden;
 }
 
 a {
@@ -132,6 +133,12 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-family: Poppins Medium;
+  font-size: 1.4em;
+  margin-top: 0;
+}
+
 button {
   border-radius: 50px;
   border: none;
@@ -149,6 +156,11 @@ button:hover>.right-arrow {
 
 button:hover>.left-arrow {
   margin: 0 1em 0 0;
+}
+
+.hidden-button {
+  transition: 0.25s;
+  opacity: 0;
 }
 
 .right-arrow {
@@ -187,6 +199,10 @@ section {
   height: 100vh;
 }
 
+.hide-section {
+  display: none;
+}
+
 #home {
   justify-content: center;
   align-items: center;
@@ -210,17 +226,19 @@ section {
 }
 
 .steps {
-  font: 0.8em Poppins Medium;
+  font-family: Poppins Medium;
   width: 100%;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
   counter-reset: step;
   margin: 2em 0;
   border-top: 2px solid #FCB0B2;
+  user-select: none;
 }
 
 .steps>div {
+  color: gainsboro;
+  width: 25%;
   margin-top: -2px;
   padding: 1em 0;
   display: flex;
@@ -230,25 +248,147 @@ section {
   border-top: 2px solid #FCB0B2;
 }
 
-.steps>div:hover,
-.steps>div:active {
-  margin-top: -3px;
-  border-top: 3px solid #FA6366;
-}
-
 .steps>div::before {
   content: counter(step);
   counter-increment: step;
-  background-color: #FA6366;
+  background-color: gainsboro;
   border-radius: 100%;
-  width: 1.3em;
-  height: 1.3em;
+  width: 1.5em;
+  height: 1.5em;
   text-align: center;
   color: white;
 }
 
+.steps > div.steps-active {
+  color: #505050;
+  margin-top: -3px;
+  border-top: 3px solid #FA6366;
+}
+
+.steps > div.steps-active::before {
+  background-color: #FA6366;
+}
+
 .form-buttons {
+  margin-top: 2em;
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+
+.form-contents {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  padding: 2.5em;
+  border: 1px solid gainsboro;
+  box-sizing: border-box;
+}
+
+.label-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+label {
+  margin-bottom: 0.8em;
+}
+
+input[type="text"] {
+  padding: 0.8em;
+}
+
+.select {
+  padding: 0.6em;
+}
+
+input[type="text"],
+.select {
+  font: 1em 'Poppins Regular';
+  box-sizing: border-box;
+  width: 50%;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid gainsboro;
+  color: inherit;
+}
+
+input::placeholder {
+  color: gainsboro;
+}
+
+.program-title-container input[type="text"]:focus {
+  border: 1px solid #FCB0B2;
+}
+
+.program-title-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5em;
+}
+
+.division-list-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5em;
+}
+
+.template-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em;
+}
+
+.template-card {
+  border: 1px solid gainsboro;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  width: 300px;
+  height: 200px;
+  position: relative;
+  transition: 0.25s;
+  background-color: white;
+}
+
+.template-card:hover {
+  border: 1px solid #FCB0B2;
+}
+
+.template-card:hover .template-name {
+  background-color: #FCB0B2;
+}
+
+.template-card input[type="radio"] {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  accent-color: #FA6366;
+  z-index: 1;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0.5em;
+}
+
+.logo {
+  max-height: 140px;
+  width: auto;
+}
+
+.template-name {
+  width: 100%;
+  text-align: center;
+  background-color: gainsboro;
+  padding: 0.5em 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.25s;
 }
