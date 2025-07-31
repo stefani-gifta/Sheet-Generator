@@ -102,15 +102,11 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-a {
-  font-weight: 500;
-  color: #FCB0B2;
-  text-decoration: inherit;
-  cursor: pointer;
-}
-
-a:hover {
-  color: #FA6366;
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #505050;
+    background-color: #ffffff;
+  }
 }
 
 body {
@@ -122,6 +118,17 @@ body {
   min-height: 100vh;
   flex-direction: column;
   text-align: center;
+}
+
+a {
+  font-weight: 500;
+  color: #FCB0B2;
+  text-decoration: inherit;
+  cursor: pointer;
+}
+
+a:hover {
+  color: #FA6366;
 }
 
 h1 {
@@ -146,9 +153,15 @@ button:hover {
   background-color: #BB5C5E;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #505050;
-    background-color: #ffffff;
-  }
+button:hover>.arrow {
+  margin: 0 0 0 1em;
+}
+
+.arrow {
+  margin: 0 0 0 0.5em;
+  transition: 0.25s;
+}
+
+.page-description {
+  margin: 1em;
 }
