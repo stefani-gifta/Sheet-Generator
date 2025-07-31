@@ -111,11 +111,11 @@
 
 body {
   margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  min-width: 320px;
-  min-height: 100vh;
   flex-direction: column;
   text-align: center;
 }
@@ -162,6 +162,16 @@ button:hover>.arrow {
   transition: 0.25s;
 }
 
+#home {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
 .page-description {
   margin: 1em;
+  font-size: 1.25em;
+  max-width: 100vh;
 }
