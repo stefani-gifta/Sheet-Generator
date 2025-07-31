@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import BackButton from "./BackButton";
 import NextButton from "./NextButton";
@@ -6,7 +6,7 @@ import NextButton from "./NextButton";
 import Page1 from "./Page1";
 import Page2 from "./Page2";
 
-export default function FormTemplate() {
+export default function FormTemplate({ onClick }) {
     const [currentPage, setCurrentPage] = useState(1);
 
     const renderPage = () => {
@@ -38,7 +38,7 @@ export default function FormTemplate() {
 
     return (
         <section id="form">
-            <button className="form-back-button">
+            <button className="form-back-button" onClick={onClick} >
                 <span className="left-arrow">←</span>
                 Monitoring & References Template Generator
             </button>
