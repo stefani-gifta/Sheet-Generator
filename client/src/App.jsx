@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <h1>Welcome to<br/>Monitoring & References Template Generator</h1>
-      <div>Cukup masukkan nama acara, daftar divisi, dan pilih template. Sistem akan langsung menyiapkan dokumen siap pakai untukmu!</div>
+      <p>Cukup masukkan nama acara, daftar divisi, dan pilih template. Sistem akan langsung menyiapkan dokumen siap pakai untukmu!</p>
       <button>Start Now</button>
     </>
   );
