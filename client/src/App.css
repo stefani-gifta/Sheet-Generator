@@ -225,13 +225,15 @@ section {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  cursor: pointer;
   counter-reset: step;
   margin: 2em 0;
   border-top: 2px solid #FCB0B2;
+  user-select: none;
 }
 
 .steps>div {
+  color: gainsboro;
+  width: 25%;
   margin-top: -2px;
   padding: 1em 0;
   display: flex;
@@ -241,21 +243,25 @@ section {
   border-top: 2px solid #FCB0B2;
 }
 
-.steps>div:hover,
-.steps>div:active {
-  margin-top: -3px;
-  border-top: 3px solid #FA6366;
-}
-
 .steps>div::before {
   content: counter(step);
   counter-increment: step;
-  background-color: #FA6366;
+  background-color: gainsboro;
   border-radius: 100%;
   width: 1.5em;
   height: 1.5em;
   text-align: center;
   color: white;
+}
+
+.steps > div.steps-active {
+  color: #505050;
+  margin-top: -3px;
+  border-top: 3px solid #FA6366;
+}
+
+.steps > div.steps-active::before {
+  background-color: #FA6366;
 }
 
 .form-buttons {
@@ -271,6 +277,7 @@ section {
   border-radius: 25px;
   padding: 2.5em;
   border: 1px solid gainsboro;
+  box-sizing: border-box;
 }
 
 .label-container {

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState } from 'react';
 
 import BackButton from "./BackButton";
 import NextButton from "./NextButton";
@@ -14,6 +14,10 @@ export default function FormTemplate() {
             case 1:
                 return <Page1 />;
             case 2:
+                return <Page2 />;
+            case 3:
+                return <Page1 />;
+            case 4:
                 return <Page2 />;
             default:
                 return <Page1 />;
@@ -34,23 +38,23 @@ export default function FormTemplate() {
 
     return (
         <section id="form">
-            <button class="form-back-button">
-                <span class="left-arrow">←</span>
+            <button className="form-back-button">
+                <span className="left-arrow">←</span>
                 Monitoring & References Template Generator
             </button>
 
-            <div class="steps">
-                <div>Detail Program Kerja</div>
-                <div>Pilih Template</div>
-                <div>Membuat Template</div>
-                <div>Download Template</div>
+            <div className="steps">
+                <div className="steps-active">Detail Program Kerja</div>
+                <div className={currentPage >= 2 ? "steps-active" : ""}>Pilih Template</div>
+                <div className={currentPage >= 3 ? "steps-active" : ""}>Membuat Template</div>
+                <div className={currentPage >= 4 ? "steps-active" : ""}>Download Template</div>
             </div>
 
-            <div class="form-contents">
+            <div className="form-contents">
                 {renderPage()}
             </div>
 
-            <div class="form-buttons">
+            <div className="form-buttons">
                 <BackButton insertText={"Kembali"} onClick={handleBack}
                     className={currentPage === 1 ? "hidden-button" : ""} />
                 <NextButton insertText={"Lanjutkan"} onClick={handleNext}
