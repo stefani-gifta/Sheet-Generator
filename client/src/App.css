@@ -199,6 +199,10 @@ section {
   height: 100vh;
 }
 
+.hide-section {
+  display: none;
+}
+
 #home {
   justify-content: center;
   align-items: center;

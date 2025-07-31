@@ -1,16 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Home from './Home';
 import FormTemplate from './FormTemplate';
 
 export default function App() {
-  const toggleComponent = () => {
-    console.log('toggle');
-  };
-  
+  const [showHomeSection, setShowHomeSection] = useState(true);
+
   return (
     <>
-      <Home onClick={toggleComponent} />
-      <FormTemplate onClick={toggleComponent} />
+      {showHomeSection && <Home onClick={() => setShowHomeSection(false)} />}
+      {!showHomeSection && <FormTemplate onClick={() => setShowHomeSection(true)} />}
     </>
   );
 }
