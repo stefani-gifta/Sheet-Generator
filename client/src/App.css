@@ -157,6 +157,11 @@ button:hover>.left-arrow {
   margin: 0 1em 0 0;
 }
 
+.hidden-button {
+  transition: 0.25s;
+  opacity: 0;
+}
+
 .right-arrow {
   margin: 0 0 0 0.5em;
   transition: 0.25s;
