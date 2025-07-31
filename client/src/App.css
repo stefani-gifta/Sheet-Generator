@@ -298,11 +298,11 @@ input[type="text"],
   color: inherit;
 }
 
-input[type="text"]::placeholder {
+input::placeholder {
   color: gainsboro;
 }
 
-input[type="text"]:focus {
+.program-title-container input[type="text"]:focus {
   border: 1px solid #FCB0B2;
 }
 
@@ -321,8 +321,57 @@ input[type="text"]:focus {
 .template-container {
   display: flex;
   flex-wrap: wrap;
+  gap: 0.5em;
 }
 
 .template-card {
+  border: 1px solid gainsboro;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  width: 300px;
   height: 200px;
+  position: relative;
+  transition: 0.25s;
+  background-color: white;
+}
+
+.template-card:hover {
+  border: 1px solid #FCB0B2;
+}
+
+.template-card:hover .template-name {
+  background-color: #FCB0B2;
+}
+
+.template-card input[type="radio"] {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  accent-color: #FA6366;
+  z-index: 1;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0.5em;
+}
+
+.logo {
+  max-height: 140px;
+  width: auto;
+}
+
+.template-name {
+  width: 100%;
+  text-align: center;
+  background-color: gainsboro;
+  padding: 0.5em 0;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  transition: 0.25s;
 }
