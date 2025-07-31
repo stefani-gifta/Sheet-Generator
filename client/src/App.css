@@ -132,6 +132,12 @@ h1 {
   margin: 0;
 }
 
+h2 {
+  font-family: Poppins Medium;
+  font-size: 1.4em;
+  margin-top: 0;
+}
+
 button {
   border-radius: 50px;
   border: none;
@@ -210,7 +216,7 @@ section {
 }
 
 .steps {
-  font: 0.8em Poppins Medium;
+  font-family: Poppins Medium;
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -241,14 +247,73 @@ section {
   counter-increment: step;
   background-color: #FA6366;
   border-radius: 100%;
-  width: 1.3em;
-  height: 1.3em;
+  width: 1.5em;
+  height: 1.5em;
   text-align: center;
   color: white;
 }
 
 .form-buttons {
+  margin-top: 2em;
   display: flex;
   width: 100%;
   justify-content: space-between;
+}
+
+.form-contents {
+  width: 100%;
+  height: auto;
+  border-radius: 25px;
+  padding: 2.5em;
+  border: 1px solid gainsboro;
+}
+
+.label-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+label {
+  margin-bottom: 0.8em;
+}
+
+input {
+  padding: 0.8em;
+}
+
+.select {
+  padding: 0.6em;
+}
+
+input,
+.select {
+  font: 1em 'Poppins Regular';
+  box-sizing: border-box;
+  width: 50%;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid gainsboro;
+  color: inherit;
+}
+
+input::placeholder {
+  color: gainsboro;
+}
+
+input:focus {
+  border: 1px solid #FCB0B2;
+}
+
+.program-title-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5em;
+}
+
+.division-list-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5em;
 }
