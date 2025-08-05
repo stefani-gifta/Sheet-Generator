@@ -1,0 +1,29 @@
+{
+  "name": "sheet-generator",
+  "version": "1.0.0",
+  "description": "Monitoring (&amp; References) Sheet Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "npm --prefix server start",
+    "client": "npm --prefix client run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stefani-gifta/Sheet-Generator.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stefani-gifta/Sheet-Generator/issues"
+  },
+  "homepage": "https://github.com/stefani-gifta/Sheet-Generator#readme",
+  "devDependencies": {
+    "concurrently": "^9.2.0"
+  },
+  "dependencies": {
+    "react-select": "^5.10.2"
+  }
+}
