@@ -5,6 +5,8 @@ import NextButton from "./NextButton";
 
 import Page1 from "./Page1";
 import Page2 from "./Page2";
+import Page3 from "./Page 3/MakeTemplatePage";
+import Page4 from "./Page 4/DownloadTemplatePage";
 
 export default function FormTemplate({ onClick }) {
     const [currentPage, setCurrentPage] = useState(1);
@@ -16,9 +18,9 @@ export default function FormTemplate({ onClick }) {
             case 2:
                 return <Page2 />;
             case 3:
-                return <Page1 />;
+                return <Page3 />;
             case 4:
-                return <Page2 />;
+                return <Page4 />;
             default:
                 return <Page1 />;
         }
@@ -56,7 +58,7 @@ export default function FormTemplate({ onClick }) {
 
             <div className="form-buttons">
                 <BackButton insertText={"Kembali"} onClick={handleBack}
-                    className={currentPage === 1 ? "hidden-button" : ""} />
+                    className={currentPage === 1 || currentPage === 4 ? "hidden-button" : ""}/>
                 <NextButton insertText={"Lanjutkan"} onClick={handleNext}
                     className={currentPage === 4 ? "hidden-button" : ""} />
             </div>

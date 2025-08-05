@@ -113,7 +113,7 @@ body {
   min-height: 100vh;
   display: flex;
   justify-content: center;
-  overflow: hidden;
+  overflow-y: auto;
 }
 
 a {
@@ -128,12 +128,14 @@ a:hover {
 }
 
 h1 {
+  color: #505050;
   font-family: Poppins Bold;
   font-size: 3.2em;
   margin: 0;
 }
 
 h2 {
+  color: #505050;
   font-family: Poppins Medium;
   font-size: 1.4em;
   margin-top: 0;
@@ -211,18 +213,21 @@ section {
 }
 
 .page-description {
+  color: #505050;
   margin: 1em;
   font-size: 1.25em;
   max-width: 100vh;
 }
 
 #form {
+  color: #505050;
   flex-wrap: wrap;
   align-items: flex-start;
   align-content: space-around;
   width: 85vw;
   overflow: hidden;
   margin: 1em;
+  height: 100%;
 }
 
 .steps {
@@ -278,7 +283,6 @@ section {
 
 .form-contents {
   width: 100%;
-  height: auto;
   border-radius: 25px;
   padding: 2.5em;
   border: 1px solid gainsboro;
@@ -298,6 +302,8 @@ label {
 
 input[type="text"] {
   padding: 0.8em;
+  color: #505050;
+  background-color: white;
 }
 
 .select {
@@ -337,8 +343,10 @@ input::placeholder {
 
 .template-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
   gap: 0.5em;
+  margin-top: 1rem;
 }
 
 .template-card {
@@ -351,6 +359,15 @@ input::placeholder {
   position: relative;
   transition: 0.25s;
   background-color: white;
+}
+
+.template-content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  margin-bottom: 1rem;
 }
 
 .template-card:hover {

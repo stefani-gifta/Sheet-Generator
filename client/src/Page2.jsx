@@ -9,9 +9,17 @@ export default function Page2() {
         <div>
             <h2>Pilihlah satu template yang ingin digunakan</h2>
             <div class="template-container">
-                <TemplateCard eventName={"Event A 2024"} />
-                <TemplateCard eventName={"Event A 2023"} />
-                <TemplateCard eventName={"Event A 2025"} />
+                <div className='template-content'>
+                    <TemplateCard eventName={"Event A 2024"} />
+                    <TemplateCard eventName={"Event A 2023"} />
+                    <TemplateCard eventName={"Event A 2025"} />
+                </div>
+
+                <div className='template-content'>
+                    <TemplateCard eventName={"Event A 2024"} />
+                    <TemplateCard eventName={"Event A 2023"} />
+                    <TemplateCard eventName={"Event A 2025"} />
+                </div>
             </div>
         </div>
     );
