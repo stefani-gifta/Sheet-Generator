@@ -1,45 +1,54 @@
 import Select from 'react-select';
 import makeAnimated from 'react-select/animated';
 
-export default function Page1() {
+export default function Page1({ formData, onDataChange }) {
     const animatedComponents = makeAnimated();
-    const divisions = [
+    const divisionOptions = [
         { value: 'acara', label: 'Acara' },
         { value: 'perkap', label: 'Perlengkapan' },
+        { value: 'pubdok', label: 'Publikasi & Dokumentasi' },
         { value: 'design', label: 'Design & Dokumentasi' },
-        { value: 'publikasi', label: 'Publikasi & Sosmed' }
     ];
+
+    const handleTitleChange = (e) => {
+        onDataChange({ programTitle: e.target.value });
+    };
+
+    const handleDivisionChange = (selectedOptions) => {
+        const divisionValues = selectedOptions ? selectedOptions.map(opt => opt.value) : [];
+        onDataChange({ divisions: divisionValues });
+    };
+
+    const selectedDivisionValues = divisionOptions.filter(opt => 
+        formData.divisions.includes(opt.value)
+    );
 
     return (
         <div>
             <h2>Masukkan informasi seputar program kerja yang akan dilaksanakan</h2>
-            <div class="label-container">
-                <div class="program-title-container">
-                    <label for="program-title">Judul Program Kerja</label>
+            <div className="label-container">
+                <div className="program-title-container">
+                    <label htmlFor="program-title">Judul Program Kerja</label>
                     <input
                         id="program-title"
                         name="program-title"
                         type="text"
-                        placeholder="Contoh: LDK-CP 2025, BSLC Benchmarking, BSLC Company Visit, ..."
+                        placeholder="Contoh: LDK-CP 2025, BSLC Benchmarking, ..."
+                        value={formData.programTitle}
+                        onChange={handleTitleChange}
                     />
                 </div>
-                <div class="division-list-container">
-                    <label for="division-list">Daftar Divisi</label>
-                    {/* <select id="division-list" name="division-list" multiple>
-                        <option value="" disabled selected hidden></option>
-                        <option value="acara">Acara</option>
-                        <option value="perkap">Perlengkapan</option>
-                        <option value="design">Design & Dokumentasi</option>
-                        <option value="publikasi">Publikasi & Sosmed</option>
-                    </select> */}
+                <div className="division-list-container">
+                    <label htmlFor="division-list">Daftar Divisi</label>
                     <Select
                         className="select"
-                        unstyled
                         placeholder="Cari divisi-divisi untuk program kerja"
                         closeMenuOnSelect={false}
                         components={animatedComponents}
                         isMulti
-                        options={divisions}
+                        options={divisionOptions}
+                        value={selectedDivisionValues}
+                        onChange={handleDivisionChange}
                         styles={{
                             container: (styles, state) => ({
                                 ...styles,
