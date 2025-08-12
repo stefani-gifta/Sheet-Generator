@@ -54,6 +54,12 @@ export default function Page1({ formData, onDataChange }) {
                                 ...styles,
                                 borderColor: state.isFocused ? '#FCB0B2' : 'gainsboro',
                             }),
+                            control: (styles, state) => ({
+                                ...styles,
+                                borderRadius: '10px',
+                                border: 'none',
+                                boxShadow: 'none',
+                            }),
                             placeholder: (styles) => ({ ...styles, color: 'gainsboro' }),
                             indicatorsContainer: (styles) => ({ ...styles, margin: '0.5em' }),
                             clearIndicator: (styles, state) => ({

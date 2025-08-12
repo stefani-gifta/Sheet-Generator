@@ -225,7 +225,6 @@ section {
   align-items: flex-start;
   align-content: space-around;
   width: 85vw;
-  overflow: hidden;
   margin: 1em;
   height: 100%;
 }
@@ -301,13 +300,9 @@ label {
 }
 
 input[type="text"] {
-  padding: 0.8em;
   color: #505050;
+  padding: 0.8em;
   background-color: white;
-}
-
-.select {
-  padding: 0.6em;
 }
 
 input[type="text"],
@@ -317,8 +312,14 @@ input[type="text"],
   width: 50%;
   border-radius: 10px;
   outline: none;
-  border: 1px solid gainsboro;
   color: inherit;
+  border: 1px solid gainsboro;
+  transition: 0.25s;
+}
+
+input[type="text"]:hover,
+.select:hover {
+  border: 1px solid #FCB0B2;
 }
 
 input::placeholder {
@@ -365,7 +366,8 @@ input::placeholder {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
+  gap: 1rem;
   height: 100%;
   margin-bottom: 1rem;
 }
@@ -395,7 +397,7 @@ input::placeholder {
 }
 
 .logo {
-  max-height: 140px;
+  max-height: 120px;
   width: auto;
 }
 
