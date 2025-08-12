@@ -24,10 +24,6 @@ app.get('/api/templates', (req, res) => {
     });
 });
 
-/**
- * [POST] /api/generate
- * Versi yang diperbarui untuk menangani MERGED CELLS.
- */
 app.post('/api/generate', async (req, res) => {
     const { programTitle, divisions, templateName } = req.body;
 
