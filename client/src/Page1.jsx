@@ -59,6 +59,7 @@ export default function Page1({ formData, onDataChange }) {
                                 borderRadius: '10px',
                                 border: 'none',
                                 boxShadow: 'none',
+                                cursor: 'pointer'
                             }),
                             placeholder: (styles) => ({ ...styles, color: 'gainsboro' }),
                             indicatorsContainer: (styles) => ({ ...styles, margin: '0.5em' }),

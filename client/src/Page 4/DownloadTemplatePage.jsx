@@ -1,5 +1,7 @@
 import React from "react";
 import "./DownloadTemplatePage.css";
+import loadingImg from '../../assets/img-loading.png'; 
+
 const DownloadTemplatePage = ({ onMakeAgain, programTitle }) => {
   return (
     <div>
@@ -10,7 +12,7 @@ const DownloadTemplatePage = ({ onMakeAgain, programTitle }) => {
 
         <div className="proker-details">
           <div className="proker-img">
-            <img src="/assets/img-loading.png" alt="File" />
+            <img src={loadingImg} alt="File" />
           </div>
           <p>{programTitle || 'template'}.xlsx</p>
         </div>
