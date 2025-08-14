@@ -8,3 +8,6 @@ client/node_modules/
 
 # backend
 server/node_modules/
+
+# vercel
+.vercel
