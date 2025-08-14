@@ -18,7 +18,7 @@ export default function Page2({ formData, onDataChange }) {
     const [error, setError] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3001/api/templates')
+        fetch('/api/templates')
             .then(res => {
                 if (!res.ok) throw new Error('Gagal mengambil data template.');
                 return res.json();

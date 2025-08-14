@@ -32,7 +32,7 @@ export default function FormTemplate({ onClick }) {
         setCurrentPage(3); 
 
         try {
-            const response = await fetch('http://localhost:3001/api/generate', {
+            const response = await fetch('/api/generate', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
